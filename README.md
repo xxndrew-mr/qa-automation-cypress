@@ -1,22 +1,34 @@
-# Cypress Login Automation Test
+# ⚙️ Cypress Login Automation Test
 
-This is a simple UI automation project using [Cypress](https://www.cypress.io/) to test a basic login form.
+![Node.js](https://img.shields.io/badge/node.js-v18.x-green?logo=node.js)
+![Cypress](https://img.shields.io/badge/Cypress-E2E%20Test-17202C?logo=cypress&logoColor=white)
+![Status](https://img.shields.io/badge/status-working-success)
+![Platform](https://img.shields.io/badge/tested-on%20Windows-blue)
 
-## 🔧 Tech Stack
-- Cypress v14.x
-- Node.js
-- http-server (for serving local HTML file)
+Simple UI automation testing project using **Cypress** to test a custom login form.
 
-## 🧪 What it tests
-- ✅ Login with valid credentials (`admin@mail.com` / `123456`)
-- ✅ Login with invalid credentials (`wrong@mail.com` / `wrongpass`)
+---
 
-## 🚀 How to Run
+## 📋 Test Scenarios
 
-1. **Install dependencies:**
+| Scenario                        | Expected Result           |
+|---------------------------------|---------------------------|
+| ✅ Login with valid credentials | Login success message     |
+| ❌ Login with invalid data      | Show "Invalid credentials"|
+
+---
+
+## 🚀 How to Run This Project
+
+### 🔧 Install Dependencies
 ```bash
 npm install
 http-server
-# or specify port
+# or use a port
 http-server -p 8080
+Then open in browser:
+http://127.0.0.1:8080/login.html
 npx cypress run --spec "cypress/e2e/login.cy.js"
+
+
+
