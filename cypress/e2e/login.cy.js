@@ -1,7 +1,7 @@
 describe('Login Form Test with Fixture', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:8080/login.html');
-    cy.fixture('users').as('users'); // load fixture ke alias
+    cy.fixture('users').as('users'); 
   });
 
   it('Login berhasil dengan data valid', function () {
