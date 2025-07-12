@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-12T05:13:34.592Z",
+    "end": "2025-07-12T05:13:38.503Z",
+    "duration": 3911,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea6068e7-77f6-4faa-82e4-5b881e0aa815",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cda9f5e4-ac2e-432a-83fb-138fde9ee21b",
+          "title": "Login Form Test with Fixture",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login berhasil dengan data valid",
+              "fullTitle": "Login Form Test with Fixture Login berhasil dengan data valid",
+              "timedOut": null,
+              "duration": 873,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#email').type(this.users.validUser.email);\ncy.get('#password').type(this.users.validUser.password);\ncy.get('button').click();\ncy.get('#msg').should('contain', 'Login success!');",
+              "err": {},
+              "uuid": "3b1cbc01-96cc-466f-9303-749c3c0c1fb7",
+              "parentUUID": "cda9f5e4-ac2e-432a-83fb-138fde9ee21b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login gagal dengan data salah",
+              "fullTitle": "Login Form Test with Fixture Login gagal dengan data salah",
+              "timedOut": null,
+              "duration": 767,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#email').type(this.users.invalidUser.email);\ncy.get('#password').type(this.users.invalidUser.password);\ncy.get('button').click();\ncy.get('#msg').should('contain', 'Invalid credentials');",
+              "err": {},
+              "uuid": "b34af3e1-71ef-4a01-94d1-997bdb03ba07",
+              "parentUUID": "cda9f5e4-ac2e-432a-83fb-138fde9ee21b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b1cbc01-96cc-466f-9303-749c3c0c1fb7",
+            "b34af3e1-71ef-4a01-94d1-997bdb03ba07"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1640,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

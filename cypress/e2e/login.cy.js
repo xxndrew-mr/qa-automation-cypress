@@ -1,18 +1,19 @@
-describe('Login Form Test', () => {
+describe('Login Form Test with Fixture', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:8080/login.html');
+    cy.fixture('users').as('users'); // load fixture ke alias
   });
 
-  it('Login berhasil dengan data valid', () => {
-    cy.get('#email').type('admin@mail.com');
-    cy.get('#password').type('123456');
+  it('Login berhasil dengan data valid', function () {
+    cy.get('#email').type(this.users.validUser.email);
+    cy.get('#password').type(this.users.validUser.password);
     cy.get('button').click();
     cy.get('#msg').should('contain', 'Login success!');
   });
 
-  it('Login gagal dengan data salah', () => {
-    cy.get('#email').type('salah@mail.com');
-    cy.get('#password').type('salah');
+  it('Login gagal dengan data salah', function () {
+    cy.get('#email').type(this.users.invalidUser.email);
+    cy.get('#password').type(this.users.invalidUser.password);
     cy.get('button').click();
     cy.get('#msg').should('contain', 'Invalid credentials');
   });
